@@ -108,9 +108,6 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
     persist.sys.usb.config=mass_storage \
     persist.service.adb.enable=1
 
-$(call inherit-product, build/target/product/full.mk)
-DEVICE_PACKAGE_OVERLAYS += device/htc/pico/overlay
-
 # Publish that we support the live wallpaper feature.
 PRODUCT_COPY_FILES += \
     packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:/system/etc/permissions/android.software.live_wallpaper.xml 
@@ -183,15 +180,9 @@ PRODUCT_COPY_FILES += \
     vendor/htc/pico/proprietary/lib/egl/libGLESv2_adreno200.so:system/lib/egl/libGLESv2_adreno200.so \
     vendor/htc/pico/proprietary/lib/egl/libq3dtools_adreno200.so:system/lib/egl/libq3dtools_adreno200.so 
 
-
 # RIL
 PRODUCT_COPY_FILES += \
     vendor/htc/pico/proprietary/lib/libhtc_ril.so:system/lib/libhtc_ril.so \
-    
-# Don't work on 4.0.4 because from 2.3.5! You need to compile it with yourself
-PRODUCT_COPY_FILES += \
-    vendor/htc/pico/proprietary/etc/gps.conf:system/etc \
-    vendor/htc/pico/proprietary/etc/spn-conf.xml:system/etc 
 
 # Audio DSP Profiles
 PRODUCT_COPY_FILES += \
@@ -241,6 +232,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
     media.stagefright.enable-http=true \
     media.stagefright.enable-aac=true \
     media.stagefright.enable-qcp=true
-    
+
+# Fixes make clean/make clobber
+PRODUCT_NAME := pico
+PRODUCT_DEVICE := pico
+PRODUCT_MODEL := HTC Explorer A310
+   
+# Inherit mdpi  
 PRODUCT_AAPT_CONFIG := normal mdpi
 PRODUCT_AAPT_PREF_CONFIG := mdpi
+PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
