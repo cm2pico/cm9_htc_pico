@@ -54,7 +54,8 @@ PRODUCT_PACKAGES += \
     
 # Misc
 PRODUCT_PACKAGES += \
-    com.android.future.usb.accessory
+    com.android.future.usb.accessory \
+    GalaxyICS-FileManager  
 
 ## Hardware properties 
 PRODUCT_COPY_FILES += \
@@ -127,9 +128,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/htc/pico/files/etc/vold.fstab:system/etc/vold.fstab 
 
-# Prebuilt Binaries
-# Don't work on 4.0.4 because from 2.3.5! And we don't need this !
-
 # Prebuilt Modules
 PRODUCT_COPY_FILES += \
     device/htc/pico/prebuilt/bcm4330.ko:system/lib/modules/bcm4330.ko \
@@ -146,7 +144,6 @@ PRODUCT_COPY_FILES += \
     device/htc/pico/prebuilt/etc/firmware/fw_bcm4330b2_apsta.bin:system/etc/firmware/fw_bcm4330b2_apsta.bin \
     
 # Audio
-# Need all audio filters
 PRODUCT_COPY_FILES += \
     device/htc/pico/prebuilt/etc/AudioFilter.csv:system/etc/AudioFilter.csv \
     device/htc/pico/files/etc/media_profiles.xml:system/etc/media_profiles.xml \
@@ -172,9 +169,6 @@ PRODUCT_COPY_FILES += \
 # Sensors
 PRODUCT_COPY_FILES += \
     device/htc/pico/prebuilt/lib/hw/sensors.pico.so:system/lib/hw/sensors.pico.so \
-    
-# GPS
-# Don't work on 4.0.4 because from 2.3.5! You need to compile it with yourself
 
 # 3D(ICS Blobs)
 PRODUCT_COPY_FILES += \
