@@ -46,7 +46,7 @@ PRODUCT_PACKAGES += \
     dexpreopt \
     lights.msm7x27a \
     sensors.msm7x27a \
-    gps.pico    
+    gps.default
     
 # Camera
 PRODUCT_PACKAGES += \
@@ -237,8 +237,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_NAME := pico
 PRODUCT_DEVICE := pico
 PRODUCT_MODEL := HTC Explorer A310
+PRODUCT_BRAND := htc_europe
    
 # Inherit mdpi  
 PRODUCT_AAPT_CONFIG := normal mdpi
 PRODUCT_AAPT_PREF_CONFIG := mdpi
+PRODUCT_TAGS += dalvik.gc.type-precise
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
