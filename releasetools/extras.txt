@@ -1,5 +1,5 @@
 # RomManager
- app/RomManager.apk
+app/RomManager.apk
 
 # LiveWallpapers
 app/MagicSmokeWallpapers.apk
