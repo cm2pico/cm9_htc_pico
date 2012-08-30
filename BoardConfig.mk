@@ -36,7 +36,7 @@ TARGET_CORTEX_CACHE_LINE_32 := true
 BOARD_KERNEL_CMDLINE := no_console_suspend=1 console=null
 BOARD_KERNEL_BASE := 0x12c00000
 BOARD_PAGE_SIZE := 0x00000800
-TARGET_KERNEL_CONFIG := cyanogenmod_p500_defconfig
+TARGET_KERNEL_CONFIG := htc_pico_defconfig
 
 # Additional libraries
 TARGET_PROVIDES_LIBAUDIO := true
